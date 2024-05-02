@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL Value giver</title>
+    <script>
+      let namesList = []
+      let namesIdList = []
+      function updateHeading(button) {
+        namesList.push(button.name)
+        namesIdList.push(button.id)
+        console.log(namesIdList.join(","))
+        document.getElementById('shower').innerHTML = namesList.join(", ")
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-GDih2_N4.js"></script>
+    <script src="./trial.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-TtRmUCS2.css">
+  </head>
+
+  <body class="text-slate-100 bg-slate-950 w-screen h-screen">
+    <header
+      class="bg-sky-950 w-full h-fit p-2 py-3 flex justify-center items-center mb-3"
+    >
+      <h1 class="text-3xl font-semibold uppercase font-mono">
+        SQL Value Maker
+      </h1>
+    </header>
+    <main class="flex flex-col justify-center items-center">
+      <h1 id="shower" class="m-2 p-2 text-xl">Click in order!</h1>
+      <div class="grid grid-cols-2 mb-2">
+        <button
+          name="First Name"
+          id="ftname"
+          onclick="updateHeading(this)"
+          class="border-2 border-transparent hover:border-slate-200 transition-all ease-in duration-75 bg-slate-800 rounded-full m-1 p-2"
+          >
+          First Name
+        </button>
+        <button
+          name="Last Name"
+          id="ltname"
+          onclick="updateHeading(this)"
+          class="border-2 border-transparent hover:border-slate-200 transition-all ease-in duration-75 bg-slate-800 rounded-full m-1 p-2"
+        >
+          Last Name
+        </button>
+        <button
+          name="Full Name"
+          id="fname"
+          onclick="updateHeading(this)"
+          class="border-2 border-transparent hover:border-slate-200 transition-all ease-in duration-75 bg-slate-800 rounded-full m-1 p-2"
+        >
+          Full Name
+        </button>
+        <button
+          name="City"
+          id="city"
+          onclick="updateHeading(this)"
+          class="border-2 border-transparent hover:border-slate-200 transition-all ease-in duration-75 bg-slate-800 rounded-full m-1 p-2"
+        >
+          City
+        </button>
+        <button
+          name="Phone Number"
+          id="phnumber"
+          onclick="updateHeading(this)"
+          class="border-2 border-transparent hover:border-slate-200 transition-all ease-in duration-75 bg-slate-800 rounded-full m-1 p-2"
+        >
+          Phone Number
+        </button>
+        <button
+          name="Company"
+          id="company"
+          onclick="updateHeading(this)"
+          class="border-2 border-transparent hover:border-slate-200 transition-all ease-in duration-75 bg-slate-800 rounded-full m-1 p-2"
+        >
+          Company
+        </button>
+      </div>
+      <input type="number" id="times" placeholder="Enter number of tuples" class="px-3 p-1 m-1 bg-transparent border-2 border-transparent border-b-slate-600 focus:border-b-slate-50 outline-none ">
+      <button onclick="finalSubmit()" class="bg-transparent border-2 rounded-full border-transparent hover:border-slate-100 transition-all ease-in duration-75 p-2 px-5 m-1 mt-3">Submit</button>
+      <label for="outputbox" class="text-slate-600">Output</label>
+      <textarea name="Output Box" id="outputbox" cols="80" rows="15" spellcheck="false" class="bg-slate-800 font-mono outline-none border-none p-3 rounded-lg"></textarea>
+    </main>
+  </body>
+</html>
